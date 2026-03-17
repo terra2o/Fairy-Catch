@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://5wecct12lwr1"]
+
+[ext_resource type="Script" uid="uid://cgv2m7ghrvod7" path="res://src/nodemusic.gd" id="1_0jmqt"]
+[ext_resource type="AudioStream" uid="uid://jm1v2mkjlxb" path="res://assets/under_an_apple_tree.wav" id="2_4snke"]
+[ext_resource type="AudioStream" uid="uid://ku2mg3pki330" path="res://assets/apples_falling.wav" id="3_2norp"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_0jmqt")
+
+[node name="Track1" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_4snke")
+volume_db = 3.5
+bus = &"Music"
+
+[node name="Track2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_2norp")
+volume_db = 3.551
+bus = &"Music"

@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://5pdekkr416eo"]
+
+[ext_resource type="Script" uid="uid://bqolbqpa2w26g" path="res://src/difficulty_dialog.gd" id="1_4rxnt"]
+[ext_resource type="FontFile" uid="uid://dwkpojiu301qu" path="res://assets/GrapeSoda.ttf" id="1_pku5y"]
+[ext_resource type="Texture2D" uid="uid://dii4je7e6a82a" path="res://assets/startcreditbutton.png" id="2_4rxnt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_4rxnt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uyb8a"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35awq"]
+texture = ExtResource("2_4rxnt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nw6s0"]
+texture = ExtResource("2_4rxnt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_emrff"]
+texture = ExtResource("2_4rxnt")
+
+[node name="DifficultyDialog" type="AcceptDialog"]
+transparent_bg = true
+title = "Select Difficulty"
+position = Vector2i(0, 74)
+size = Vector2i(350, 500)
+visible = true
+unresizable = true
+borderless = true
+transparent = true
+popup_window = true
+theme_override_styles/panel = SubResource("StyleBoxEmpty_4rxnt")
+script = ExtResource("1_4rxnt")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_right = 350.0
+offset_bottom = 459.0
+grow_vertical = 2
+size_flags_horizontal = 0
+
+[node name="EASY" type="Button" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pku5y")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uyb8a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_35awq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nw6s0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_emrff")
+text = "Easy"
+
+[node name="NORMAL" type="Button" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pku5y")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uyb8a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_35awq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nw6s0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_emrff")
+text = "Default / Normal"
+
+[node name="HARD" type="Button" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pku5y")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uyb8a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_35awq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nw6s0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_emrff")
+text = "Hard"
+
+[node name="VERYHARD" type="Button" parent="VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_pku5y")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uyb8a")
+theme_override_styles/hover = SubResource("StyleBoxTexture_35awq")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_nw6s0")
+theme_override_styles/normal = SubResource("StyleBoxTexture_emrff")
+text = "Very Hard"
+
+[connection signal="pressed" from="VBoxContainer/EASY" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="VBoxContainer/NORMAL" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="VBoxContainer/HARD" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="VBoxContainer/VERYHARD" to="." method="_on_veryhard_pressed"]

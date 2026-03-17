@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://bqd2c6331fv08"]
+
+[ext_resource type="Texture2D" uid="uid://s3rlwykiphs8" path="res://assets/fcatch.png" id="1_pjc1l"]
+[ext_resource type="FontFile" uid="uid://dwkpojiu301qu" path="res://assets/GrapeSoda.ttf" id="2_c1t8d"]
+[ext_resource type="Script" uid="uid://cu0g4lfp2o8ve" path="res://src/button_back.gd" id="3_g4wvt"]
+[ext_resource type="Texture2D" uid="uid://kkegcf1wp54u" path="res://assets/48x48buttonleft.png" id="3_pjc1l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c1t8d"]
+texture = ExtResource("1_pjc1l")
+modulate_color = Color(0.589096, 0.589096, 0.589096, 1)
+
+[node name="Credits" type="Control" unique_id=2102622987]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="." unique_id=913597664]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 1.0
+offset_bottom = 648.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_c1t8d")
+
+[node name="Label" type="Label" parent="." unique_id=1001364834]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 5
+theme_override_constants/shadow_outline_size = 2
+theme_override_fonts/font = ExtResource("2_c1t8d")
+theme_override_font_sizes/font_size = 29
+text = "Apple asset: \"pixel adventure\" by \"pixel frog\"
+Fairy and grass asset: \"kevins moms house\"
+Touch control buttons by terra238523 / terra2o
+Game by  terra238523 / terra2o
+Music by terra238523 / terra2o"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=980338779]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -26.0
+offset_right = 98.0
+offset_bottom = 62.0
+scale = Vector2(1.98771, 1.98771)
+icon = ExtResource("3_pjc1l")
+flat = true
+script = ExtResource("3_g4wvt")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

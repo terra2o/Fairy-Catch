@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c8q3nl0j58stg"]
+
+[ext_resource type="Script" uid="uid://cchkn6aekgclg" path="res://src/SFXManager.gd" id="1_onrww"]
+[ext_resource type="AudioStream" uid="uid://co7xnpav52jhv" path="res://assets/sound_effect.wav" id="2_nmpff"]
+
+[node name="Node" type="Node"]
+script = ExtResource("1_onrww")
+
+[node name="SFXPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_nmpff")
+bus = &"EffectSFX"

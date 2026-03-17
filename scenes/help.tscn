@@ -1,0 +1,69 @@
+[gd_scene format=3 uid="uid://bmmad70xcv3g0"]
+
+[ext_resource type="Texture2D" uid="uid://s3rlwykiphs8" path="res://assets/fcatch.png" id="1_e3oed"]
+[ext_resource type="Texture2D" uid="uid://kkegcf1wp54u" path="res://assets/48x48buttonleft.png" id="2_l2nui"]
+[ext_resource type="Script" uid="uid://cu0g4lfp2o8ve" path="res://src/button_back.gd" id="3_hy4f4"]
+[ext_resource type="FontFile" uid="uid://dwkpojiu301qu" path="res://assets/GrapeSoda.ttf" id="4_hy4f4"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4abyq"]
+texture = ExtResource("1_e3oed")
+modulate_color = Color(0.588235, 0.588235, 0.588235, 1)
+
+[node name="Help" type="Control" unique_id=713393238]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Wallpaper" type="Panel" parent="." unique_id=305765473]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_4abyq")
+
+[node name="Button" type="Button" parent="." unique_id=325994163]
+layout_mode = 0
+offset_left = 6.0
+offset_top = -26.0
+offset_right = 98.0
+offset_bottom = 62.0
+scale = Vector2(1.98771, 1.98771)
+icon = ExtResource("2_l2nui")
+flat = true
+script = ExtResource("3_hy4f4")
+
+[node name="Label" type="Label" parent="." unique_id=1011520842]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -65.5
+offset_top = -15.0
+offset_right = 65.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_hy4f4")
+theme_override_font_sizes/font_size = 29
+text = "Keyboard and mouse controls:
+Boost : Z - Space - Shift - Middle mouse button - Mouse side buttons
+Movement: A D - Left Right - Left mouse Right mouse
+Pause: Escape
+Quick start: S - R 
+Controller:
+Boost : Bottom action
+Movement: Left stick or D-Pad
+Pause: Back or right action
+Quick Start: Left action or Start"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

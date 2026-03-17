@@ -1,0 +1,17 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+*.gdkey
+/bin/
+/packaging/
+
+.mono/
+*.csproj
+*.sln
+
+.DS_Store
+Thumbs.db
+desktop.ini
+
+*.tmp
+*.bak

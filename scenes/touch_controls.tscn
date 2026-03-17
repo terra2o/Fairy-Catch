@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://d0677in8kmkon"]
+
+[ext_resource type="Texture2D" uid="uid://kkegcf1wp54u" path="res://assets/48x48buttonleft.png" id="1_ep0mg"]
+[ext_resource type="Texture2D" uid="uid://prc5bko7vwic" path="res://assets/48x48buttoright.png" id="2_ojhyh"]
+[ext_resource type="Texture2D" uid="uid://b4g2iq7ucx53h" path="res://assets/48x48buttondash.png" id="3_qpxdh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep0mg"]
+size = Vector2(60, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ojhyh"]
+size = Vector2(60, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qpxdh"]
+size = Vector2(120, 120)
+
+[node name="TouchControls" type="CanvasLayer" unique_id=375114350]
+
+[node name="Left" type="TouchScreenButton" parent="." unique_id=430742903]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(42, 503)
+scale = Vector2(2.70313, 2.70313)
+texture_normal = ExtResource("1_ep0mg")
+shape = SubResource("RectangleShape2D_ep0mg")
+passby_press = true
+action = "left"
+
+[node name="Right" type="TouchScreenButton" parent="." unique_id=321161811]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(204, 503)
+scale = Vector2(2.70333, 2.70333)
+texture_normal = ExtResource("2_ojhyh")
+shape = SubResource("RectangleShape2D_ojhyh")
+passby_press = true
+action = "right"
+
+[node name="Boost" type="TouchScreenButton" parent="." unique_id=500461466]
+modulate = Color(1, 1, 1, 0.784314)
+position = Vector2(1002, 503)
+scale = Vector2(2.70313, 2.70313)
+texture_normal = ExtResource("3_qpxdh")
+shape = SubResource("RectangleShape2D_qpxdh")
+passby_press = true
+action = "boost"

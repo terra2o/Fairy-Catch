@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ciq8sbsu8rd4t"]
+
+[ext_resource type="Texture2D" uid="uid://dj5sueiq5r30m" path="res://assets/Free/Items/Fruits/Apple.png" id="1_3ed3y"]
+[ext_resource type="Script" uid="uid://bdh03oa0x5fib" path="res://src/apple.gd" id="1_n78qv"]
+[ext_resource type="Shader" uid="uid://cx1uh8jutgf58" path="res://src/gdshader/apple.gdshader" id="2_whgpf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xniv1"]
+shader = ExtResource("2_whgpf")
+shader_parameter/blur_strength = 0.5
+shader_parameter/shadow_color = Color(0.2, 0.2, 0.2, 0.3)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwr3j"]
+atlas = ExtResource("1_3ed3y")
+region = Rect2(0, 0, 34, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n78qv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwr3j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_whgpf"]
+radius = 7.0
+
+[node name="Apple" type="Area2D"]
+collision_mask = 2
+monitorable = false
+script = ExtResource("1_n78qv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+material = SubResource("ShaderMaterial_xniv1")
+sprite_frames = SubResource("SpriteFrames_n78qv")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
+shape = SubResource("CircleShape2D_whgpf")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

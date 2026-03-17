@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://sr0swglglso4"]
+
+[ext_resource type="Script" uid="uid://81svkrdagl6f" path="res://src/hud.gd" id="1_37p78"]
+[ext_resource type="FontFile" uid="uid://dwkpojiu301qu" path="res://assets/GrapeSoda.ttf" id="2_64ctp"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_37p78")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -33.0
+offset_right = 20.0
+offset_bottom = -10.0
+theme_override_fonts/font = ExtResource("2_64ctp")
+text = "a"
+horizontal_alignment = 1
+autowrap_mode = 2
