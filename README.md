@@ -6,13 +6,13 @@ An arcade game where you catch falling apples. Built with Godot 4.
 
 ## Play
 
-Grab the latest build from Releases.
+Grab the latest build from [itch.io](https://terra2o.itch.io/fairy-catch).
 
 ## Build from source
 
 1. Clone the repo
 2. Open `project.godot` in Godot 4
-3. Hit run
+3. Hit run or export
 
 ## License
 
